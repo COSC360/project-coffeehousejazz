@@ -56,3 +56,17 @@ Administration
 - Simple discussion (topics) grouping and display
 - Navigation breadcrumb strategy (i.e. user can determine where they are in threads)
 - Error handling (bad navigation)
+
+Additional Requirements
+- Search and analysis for topics/items
+- Hot threads/hot item tracking
+-Visual display of updates, etc (site usage charts, etc)
+-Activity by date
+-Tracking (including utilizing tracking API or your own with visualization tools)
+-Collapsible items/treads without page reloading
+-Alerts on page changes
+-Admin view reports on usage (with filtering)
+-Styling flourishes
+-Responsive layout for mobile
+-Tracking comment history from a user’s perspective
+-Accessibility
