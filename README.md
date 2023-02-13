@@ -41,7 +41,7 @@ Administration
 - resolve user issues
   - forgotten passwords
 
-### Functional Requirements (from assignment requirements)###
+### Functional Requirements (from assignment requirements)
 - Hand-styled layout with contextual menus (i.e. when user has logged on to site, menus reflect change). 
 - Bootstrap layout frameworks only
 - 2 or 3 column layout using appropriate design principles (i.e. highlighting nav links when hovered over, etc) responsive design
