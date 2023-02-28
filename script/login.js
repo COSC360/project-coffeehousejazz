@@ -6,16 +6,16 @@ loginForm.addEventListener("submit", function(event) {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  // Retrieve the username and password from local storage
+  // get variables
   const storedUsername = localStorage.getItem("username");
   const storedPassword = localStorage.getItem("password");
 
-  // Validate the username and password
+  // check if equal
   if (username === storedUsername && password === storedPassword) {
-    // If the username and password are correct, redirect to the dashboard
-    window.location.href = "dashboard.html";
+    // the username and password are correct - go to home
+    window.location.href = "home.html";
   } else {
-    // If the username and password are incorrect, display an error message
+    // error
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Invalid username or password";
     loginForm.appendChild(errorMessage);

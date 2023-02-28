@@ -1,13 +1,12 @@
-const signupForm = document.getElementById("signup");
+const signupForm = document.getElementById("submit");
 
 signupForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
+  alert("reached")
   const username = document.getElementById("username").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmpassword").value;
-
+  event.preventDefault();
   // check if the passwords match
   if (password !== confirmPassword) {
     // error
