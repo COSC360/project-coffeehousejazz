@@ -1,24 +1,33 @@
-const signupForm = document.getElementById("submit");
-
-signupForm.addEventListener("submit", function(event) {
-  alert("reached")
-  const username = document.getElementById("username").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmpassword").value;
-  event.preventDefault();
-  // check if the passwords match
-  if (password !== confirmPassword) {
-    // error
-    const errorMessage = document.createElement("p");
-    errorMessage.textContent = "Passwords don't match";
-    signupForm.appendChild(errorMessage);
-  } else {
-    // store the username, email, and password
-    localStorage.setItem("username", username);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-    // goes to login page
-    window.location.href = "login.html";
-  }
+window.onload = () => {
+  let signForm = document.querySelector("signup");
+  let requiredInput = document.querySelectorAll(".required");
+  // event lister #1, checks submit button
+  signForm.addEventListener("submit", (e) => {
+    requiredInput.forEach(input => {
+      e.preventDefault();
+      if (input.type == "text" && input.value.length == 0) {
+        input.parentElement.classList.add("hello");
+        e.preventDefault();
+      } else if (input.value === "") {
+        input.classList.add("hello");
+        e.preventDefault();
+      }
+      //store this information for later
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmpassword").value;
+  });
 });
+// event listener #2, checks when changed
+// valid inputs
+requiredInput.forEach(input => {
+  input.addEventListener("change", () => {
+    // remove the highlight when filled out
+    if (input.type == "text" && input.checked)
+      input.parentElement.classList.remove("hello");
+    else
+      input.classList.remove("hello");
+  });
+});
+}

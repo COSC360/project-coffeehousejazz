@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discussion Board</title>
+  <style>
+    /* Styles for the header */
+    header {
+      background-color: #FF4500;
+      color: #FFFFFF;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Styles for the main content area */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Styles for the posts section */
+    .posts {
+      width: 80%;
+    }
+
+    /* Styles for each individual post */
+    .post {
+      border: 1px solid #DDDDDD;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    /* Styles for the post title */
+    .post-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    /* Styles for the post body */
+    .post-body {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    /* Styles for the post author and date */
+    .post-details {
+      font-size: 1rem;
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header section -->
+  <header>
+    <h1>Discussion Board</h1>
+  </header>
+
+  <!-- Main content section -->
+  <main>
+    <!-- Posts section -->
+    <section class="posts">
+      <!-- Individual post -->
+      <div class="post">
+        <!-- Post title -->
+        <h2 class="post-title">Post Title</h2>
+        <!-- Post body -->
+        <p class="post-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat ligula eu sapien laoreet, ut dictum purus tincidunt. Sed a luctus ante. Sed commodo eros ac tellus consequat vulputate. Fusce consequat ligula eget turpis faucibus malesuada. Sed eu arcu ut nunc congue viverra. </p>
+        <!-- Post author and date -->
+        <p class="post-details">Posted by <strong>Username</strong> on <strong>01/01/2023</strong></p>
+      </div>
+
+      <!-- More posts would go here -->
+    </section>
+
+    <!-- Form to create a new post -->
+    <form>
+      <h2>Create a New Post</h2>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+      <label for="body">Body:</label>
+      <textarea id="body" name="body" required></textarea>
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" required>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      <input type="submit" value="Create Post">
+    </form>
+  </main>
+</body>
+</html>

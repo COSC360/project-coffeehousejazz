@@ -3,18 +3,18 @@
   <head>
     <title>EDiscussion</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../script/signup.js"></script>
+    <link rel="stylesheet" href="../css/highlight.css" />
   </head>
   <body>
     <div class="box1">
       <h1>Sign Up</h1>
       <form id = "signup">
-        <input type="email" id="email" placeholder="Email" />
-        <input type="text" id="fullname" placeholder="Full Name" />
-        <input type="text" id="username" placeholder="Username" />
+        <input type="email" id="email" placeholder="Email" class="required"/>
+        <input type="text" id="fullname" placeholder="Full Name" class="required"/>
+        <input type="text" id="username" placeholder="Username" class="required"/>
         <input type="password" id="password" placeholder="Password" />
-        <input type="password" id="confirmpassword" placeholder="Confirm Password" />
-        <input type="submit" id="submit" value="Sign up" />
+        <input type="password" id="confirmpassword" placeholder="Confirm Password" class="required"/>
+        <input type="submit" value="Sign up" />
       <closeform></closeform></form>
     </div>
     <div class="box2">
@@ -22,4 +22,5 @@
     </div>
     </p>
   </body>
+  <script src="../script/signup.js"></script>
 </html>
