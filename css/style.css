@@ -1,5 +1,5 @@
 body {
-    background-color: #608f77;
+    background-color: #4a83b8;
     font-family: "Roboto", sans-serif;
   }
   
@@ -12,7 +12,7 @@ body {
   
   h1 {
     text-align: center;
-    padding-top: 15px;
+    padding-top: 16px;
   }
   
   h4 {
@@ -21,49 +21,49 @@ body {
   
   form {
     width: 300px;
-    margin-left: 20px;
+    margin-left: 19px;
   }
   
   form label {
     display: flex;
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 20px;
   }
   
   form input {
     width: 100%;
-    padding: 7px;
+    padding: 6px;
     border: none;
-    border: 1px solid gray;
-    border-radius: 6px;
+    border: 1px solid rgb(115, 115, 115);
+    border-radius: 5px;
     outline: none;
   }
   input[type="button"] {
-    width: 320px;
-    height: 35px;
-    margin-top: 20px;
+    width: 330px;
+    height: 34px;
+    margin-top: 19px;
     border: none;
-    background-color: #499d65;
+    background-color: #3ebfc8;
     color: white;
-    font-size: 18px;
+    font-size: 19px;
   }
   p {
     text-align: center;
-    padding-top: 20px;
-    font-size: 15px;
+    padding-top: 16px;
+    font-size: 16px;
   }
   .para-2 {
     text-align: center;
-    color: rgb(105, 105, 105);
+    color: rgb(132, 100, 100);
     font-size: 15px;
-    margin-top: -10px;
+    margin-top: -11px;
   }
   .para-2 a {
-    color: #40a872;
+    color: #44a4b9;
   }
 
   .box2{
-    width: 360px;
+    width: 350px;
     margin: auto;
     background-color: white;
   }
