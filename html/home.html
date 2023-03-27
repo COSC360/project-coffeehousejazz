@@ -8,9 +8,10 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="user_settings.php">User Settings</a></li>
+                <li><a href="settings.html">Settings</a></li>
             </ul>
         </nav>
+        <!-- search bar-->
         <form action="search.php" method="get">
             <input type="text" name="search_query" placeholder="Search...">
             <button type="submit">Search</button>
@@ -18,11 +19,11 @@
     </header>
     <main>
         <section>
-            <h2>Recent Posts</h2>
+            <h2>Recent</h2>
             <ul>
-                <!-- PHP code to display recent posts -->
+                <!-- recent posts -->
                 <?php
-                    // Connect to database
+                    // db
                     $servername = "localhost";
                     $username = "username";
                     $password = "password";
@@ -34,12 +35,12 @@
                         die("Connection failed: " . $conn->connect_error);
                     }
 
-                    // Query to select recent posts
+                    // find the most recent posts
                     $sql = "SELECT postID, username, profileImage, content, postImage, topic, likes, dislikes FROM post ORDER BY postID DESC LIMIT 10";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
-                        // Output data of each row
+
                         while($row = $result->fetch_assoc()) {
                             echo "<li>";
                             echo "<img src='data:image/jpeg;base64,".base64_encode($row['profileImage'])."' alt='Profile Image'>";
@@ -63,9 +64,9 @@
         <aside>
             <h2>Trending Topics</h2>
             <ul>
-                <!-- PHP code to display trending topics -->
+                <!-- trending -->
                 <?php
-                    // Connect to database
+                    // db
                     $servername = "localhost";
                     $username = "username";
                     $password = "password";
@@ -77,15 +78,14 @@
                         die("Connection failed: " . $conn->connect_error);
                     }
 
-                    // Query to select trending topics
+                    // find trends - most posts of a certain topic
                     $sql = "SELECT topic, COUNT(*) as count FROM post GROUP BY topic ORDER BY count DESC LIMIT 5";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
-                        // Output data of each row
                         while($row = $result->fetch_assoc()) {
                             echo "<li>";
-                            echo "<a href='search.php?search_query=".$row['topic']."'>".$row['topic']."</a>";
+                            echo "<a href=$result"</a>";
                             echo "</li>";
                         }
                     } else {

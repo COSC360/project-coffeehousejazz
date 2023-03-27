@@ -1,57 +1,51 @@
 <?php
-// Start the session
+//  session
 session_start();
 
-// Database connection settings
+// db
 $host = 'localhost';
 $user = 'root';
 $password = 'password';
 $database = 'forum';
 $mysqli = new mysqli($host, $user, $password, $database);
 
-// Check for errors
 if ($mysqli->connect_error) {
     die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
 
-// Process form submission
+//form stuff
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get form input values
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Prepare SQL query
     $query = "SELECT * FROM users WHERE username = ?";
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param("s", $username);
-
-    // Execute SQL query
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Check if username exists
+    // password is the right one
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
         $hashed_password = $user['password'];
 
-        // Verify the password
+        // password is the right one
         if (password_verify($password, $hashed_password)) {
             // Set the user session variables
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['is_admin'] = $user['isAdmin'];
 
-            // Redirect to the home page
+            // back home
             header('Location: index.html');
             exit;
         }
     }
 
-    // Handle login error
+    // wrong login
     $login_error = 'Invalid username or password';
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
