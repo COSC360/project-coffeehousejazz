@@ -6,7 +6,7 @@ project-coffeehousejazz created by GitHub Classroom
 Jasmine Mishra
 
 ### Proposal ###
-The wesbite is called Bantero. The website will allow registered users to engage in online discussions (aka banter :)) and unregistered users to view discussions. The goal is to produce a service that allows users to register, post, and make comments on items. Additionally, unregistered users must be able to view the content but will not be able to edit or comment on posts. 
+The wesbite is called The Lab. The intended audience for this website is students at universities to engage in disucssion. The website will allow registered users to engage in online discussions. The goal is to produce a service that allows users to register, post, and make comments on items. Additionally, unregistered users must be able to preview the content but will not be able to edit or comment on posts. 
 
 ### Requirements ###
 Registered users
