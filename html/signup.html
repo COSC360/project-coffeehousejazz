@@ -4,11 +4,49 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/highlight.css" />
+    <script>
+      function validate() {
+          var username = document.forms["signupform"]["username"].value;
+          var email = document.forms["signupform"]["email"].value;
+          var password = document.forms["signupform"]["password"].value;
+          var confirm_password = document.forms["signupform"]["confirmPassword"].value;
+
+          if (username == null || username.length === 0) {
+              alert("Username cannot be empty.");
+              return false;
+          }
+          if (password == null || password.length === 0) {
+              alert("Password cannot be empty.");
+              return false;
+          }
+          if (confirm_password == null || confirm_password.length === 0) {
+              alert("Confirm Password cannot be empty.");
+              return false;
+          }
+          if (password != confirm_password) {
+              alert("Passwords do not match.");
+              return false;
+          }
+          // regex for email
+          var email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!email_regex.test(email)) {
+              alert("Invalid email address.");
+              return false;
+          }
+          // regex for password
+          var password_regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+          if (!password_regex.test(password)) {
+              alert(
+                  "Password must be < 8 characters. Also must contain at least one number, one uppercase letter, one lowercase letter, and one special character.");
+              return false;
+          }
+      }
+      </script>
   </head>
   <body>
     <div class="box1">
       <h1>Sign Up</h1>
-      <form id = "signup" action="register.php" method="post">
+      <form id = "signup" action="register.php" method="post" onsubmit="return validate()">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
 

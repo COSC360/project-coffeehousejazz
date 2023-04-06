@@ -1,6 +1,4 @@
 <?php
-//  session
-session_start();
 
 //form stuff
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // wrong login
-    $login_error = 'Invalid username or password';
+    die('Invalid username or password');
 }
 ?>
 <!DOCTYPE html>
@@ -43,9 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h1>Login</h1>
-    <?php if (isset($login_error)) { ?>
-        <p><?php echo $login_error; ?></p>
-    <?php } ?>
     <form method="POST" action="login.php">
         <label>Username:</label>
         <input type="text" name="username" required><br>
@@ -55,5 +50,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit">Login</button>
     </form>
+    <div class="box2">
+        <p class="para">Don't have an account? <a href="signup.php">Sign Up</a>
+    </div>
 </body>
+<div class="container">
+    <footer>
+    <p> The Lab </p>
+        <ul>
+            <li class="item">
+                <a href="home.php" >Home</a>
+            </li>
+            <li class="item">
+                <a href="home.php">Home/a>
+            </li>
+            <li class="item">
+                <a href="home.php">Home</a>
+            </li>
+        </ul>
+    </footer>
+</div>
 </html>
