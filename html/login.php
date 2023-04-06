@@ -2,19 +2,9 @@
 //  session
 session_start();
 
-// db
-$host = 'localhost';
-$user = 'root';
-$password = 'password';
-$database = 'forum';
-$mysqli = new mysqli($host, $user, $password, $database);
-
-if ($mysqli->connect_error) {
-    die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
-}
-
 //form stuff
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $mysqli = require __DIR__ . '/database.php';
     $username = $_POST['username'];
     $password = $_POST['password'];
 
