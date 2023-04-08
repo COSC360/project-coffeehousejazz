@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script>
+      function validate() {
+          var username = document.forms["signup"]["username"].value;
+          var email = document.forms["signup"]["email"].value;
+          var password = document.forms["signup"]["password"].value;
+          var confirm_password = document.forms["signup"]["confirmPassword"].value;
+
+          if (username == null || username.length === 0) {
+              alert("Username cannot be empty.");
+              return false;
+          }
+          if (password == null || password.length === 0) {
+              alert("Password cannot be empty.");
+              return false;
+          }
+          if (confirm_password == null || confirm_password.length === 0) {
+              alert("Confirm Password cannot be empty.");
+              return false;
+          }
+          if (password != confirm_password) {
+              alert("Passwords do not match.");
+              return false;
+          }
+          // regex for email
+          var email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!email_regex.test(email)) {
+              alert("Invalid email address.");
+              return false;
+          }
+          // regex for password
+          var password_regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+          if (!password_regex.test(password)) {
+              alert("Password must be < 8 characters. Also must contain at least one number, one uppercase letter, one lowercase letter, and one special character.");
+              return false;
+          }
+      }
+      </script>
+  </head>
+  <body>
+    <div class="box1">
+      <h1>Sign Up</h1>
+      <form id = "signup" name = "signup" action="register.php" method="POST" onsubmit="return validate()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="nickname">Name:</label>
+        <input type="text" id="nickname" name="nickname" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+
+        <input type="submit" value="Sign up">
+      <closeform></closeform></form>
+    </div>
+    <div class="box2">
+        <p class="para-2">Have an account? <a href="login.php">Log in</a>
+    </div>
+    </p>
+  </body>
+  <footer>
+    <div>
+        <h4>Created by Jasmine</h3>
+    </div>
+    <div>
+        <a href="about.php" class="stretched-link">About</a>
+        <a href="contact.php" class="stretched-link">Contact Us</a>
+        <a href="faq.php" class="stretched-link">FAQs</a>
+        <a href="home.php" class="stretched-link">Home</a>
+    </div>
+</div>
+</footer>
+</html>
