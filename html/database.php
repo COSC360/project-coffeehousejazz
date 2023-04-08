@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$dbname = "project-coffeehousejazz";
+$dbname = "db_37138427";
 $username = "root";
 $password = "";
 
